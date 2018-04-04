@@ -29,16 +29,25 @@ $(document).ready(function() {
 
     var result = roll();
 
-    if(result === 1){
-      $("#roll").html('<span class="lose">' + result + '</span>');
-    } else {
-        $("#roll").text(result);
+    // if(result === 1){
+    //   $("#roll").html('<span class="lose">' + result + '</span>');
+    //   $("#total").html('You Lose!');
+    //   currentRoll.rolls = [];
+    // } else {
+      $("#roll").text(result);
+      currentRoll.rolls.push(result);
+      var currentTotal = total(currentRoll.rolls);
+      $("#total").text(currentTotal);
+    // }
+
+    if(currentTotal >= 100) {
+      alert("WIN");
+      currentRoll.rolls = [];
+      $("#total").text("0");
+      // show stats, clear arrays, play again button
     }
 
-    currentRoll.rolls.push(result);
 
-    var currentTotal = total(currentRoll.rolls);
-    $("#total").text(currentTotal);
 
     $("#hold").click(function(){
       $("#roll").text("");
