@@ -35,15 +35,14 @@ $(document).ready(function() {
         $("#roll").text(result);
     }
 
-
     currentRoll.rolls.push(result);
 
     var currentTotal = total(currentRoll.rolls);
     $("#total").text(currentTotal);
 
     $("#hold").click(function(){
-
-
+      $("#roll").text("");
+      $("#total").text("");
       currentRoll.rolls = [];
 
     });
