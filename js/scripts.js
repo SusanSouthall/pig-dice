@@ -29,7 +29,12 @@ $(document).ready(function() {
 
     var result = roll();
 
-    $("#roll").text(result);
+    if(result === 1){
+      $("#roll").html('<span class="lose">' + result + '</span>');
+    } else {
+        $("#roll").text(result);
+    }
+
 
     currentRoll.rolls.push(result);
 
@@ -37,7 +42,7 @@ $(document).ready(function() {
     $("#total").text(currentTotal);
 
     $("#hold").click(function(){
-    
+
 
       currentRoll.rolls = [];
 
