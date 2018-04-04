@@ -15,28 +15,34 @@ function total(array) {
   return sum;
 }
 
-
-
+function clear() {
+  rolls = currentRoll.rolls = [];
+  return rolls;
+}
 
 // NOTE: Begins User Interface Logic.
 
 $(document).ready(function() {
+
   $("form").submit(function(event) {
     event.preventDefault();
 
     var result = roll();
 
     $("#roll").text(result);
-    //
-    currentRoll.rolls.push(result);
-    // console.log(currentRoll);
-    //
-    $("#hold").click(function(){
-      var currentTotal = total(currentRoll.rolls);
-      $("#total").text(currentTotal);
-    });
-    //
 
+    currentRoll.rolls.push(result);
+
+    var currentTotal = total(currentRoll.rolls);
+    $("#total").text(currentTotal);
+
+    $("#hold").click(function(){
+    
+
+      currentRoll.rolls = [];
+
+    });
 
   });
+
 });
