@@ -3,7 +3,9 @@ function roll() {
   return randomNumber;
 }
 
-
+var currentRoll = {
+  rolls: []
+};
 
 
 
@@ -15,7 +17,9 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     var result = roll();
-    console.log(result);
+
+    currentRoll.rolls.push(result);
+    console.log(currentRoll);
 
 
 
