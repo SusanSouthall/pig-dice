@@ -1,3 +1,16 @@
+function NewPlayer(name) {
+  this.name = name;
+  this.score = 0;
+}
+
+
+
+
+
+
+
+
+
 function roll() {
   var randomNumber = (Math.floor(Math.random()*6)+1);
   return randomNumber;
@@ -15,30 +28,32 @@ function total(array) {
   return sum;
 }
 
-function clear() {
-  rolls = currentRoll.rolls = [];
-  return rolls;
-}
 
 // NOTE: Begins User Interface Logic.
 
 $(document).ready(function() {
 
-  $("form").submit(function(event) {
+  $("form.player-info").submit(function(event) {
+    event.preventDefault();
+    
+    $("form.player-info").hide();
+  });
+
+  $("form#player1").submit(function(event) {
     event.preventDefault();
 
     var result = roll();
 
-    // if(result === 1){
-    //   $("#roll").html('<span class="lose">' + result + '</span>');
-    //   $("#total").html('You Lose!');
-    //   currentRoll.rolls = [];
-    // } else {
+    if(result === 1){
+      $("#roll").html('<span class="lose">' + result + '</span>');
+      $("#total").html('You Lose!');
+      currentRoll.rolls = [];
+    } else {
       $("#roll").text(result);
       currentRoll.rolls.push(result);
       var currentTotal = total(currentRoll.rolls);
       $("#total").text(currentTotal);
-    // }
+    }
 
     if(currentTotal >= 100) {
       alert("WIN");

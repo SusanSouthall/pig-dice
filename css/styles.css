@@ -4,7 +4,9 @@
 .btn.btn-info {
   width: 100%;
 }
-
+ form h2 {
+   text-align: center;
+ }
 .total {
   height: 100px;
   width: 100px;
