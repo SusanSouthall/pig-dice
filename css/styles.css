@@ -1,12 +1,27 @@
+#player1-board {
+  display: none;
+}
+
+#player2-board {
+  display: none;
+}
+
 .btn.btn-warning {
   width: 100%;
 }
+
 .btn.btn-info {
   width: 100%;
 }
- form h2 {
-   text-align: center;
- }
+
+form h2 {
+ text-align: center;
+}
+
+form p {
+ text-align: center;
+}
+
 .total {
   height: 100px;
   width: 100px;

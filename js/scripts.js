@@ -41,10 +41,16 @@ $(document).ready(function() {
     player1 = new NewPlayer(inputName1);
     player2 = new NewPlayer(inputName2);
 
+    $("#player1-board .board-title").text(player1.name);
+    $("#player2-board .board-title").text(player2.name);
+
+    $("#player1-board .current-score").text("Current Score: " + player1.score);
+    $("#player2-board .current-score").text("Current Score: " + player2.score);
     $("#player-info").hide();
+    $("#player1-board").fadeIn();
   });
 
-  $("form#player1-board").submit(function(event) {
+  $("#player1-board form").submit(function(event) {
     event.preventDefault();
     random = roll();
 
@@ -73,6 +79,8 @@ $(document).ready(function() {
       $("#roll").text("");
       $("#total").text("");
       currentRoll.rolls = [];
+      $("#player1-board").hide();
+      $("#player2-board").fadeIn();
   });
 
 });
