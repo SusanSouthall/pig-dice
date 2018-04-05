@@ -6,6 +6,9 @@
   display: none;
 }
 
+.winner {
+  display: none;
+}
 .btn.btn-warning {
   width: 100%;
 }

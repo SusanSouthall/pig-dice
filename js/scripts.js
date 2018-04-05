@@ -9,7 +9,7 @@ var currentTotal = 0;
 
 function NewPlayer(name) {
   this.name = name;
-  this.score = 0;
+  this.score = 90;
 }
 
 function roll() {
@@ -74,8 +74,8 @@ $(document).ready(function() {
 
     if(player1.score + currentTotal >= 100) {
       alert("WIN");
-      currentRoll.rolls = [];
-      $("#total").text("0");
+      $("#player1-board").hide();
+      $(".winner").show();
     }
     });
 
@@ -113,8 +113,8 @@ $("#player2-board form").submit(function(event) {
 
   if(player2.score + currentTotal >= 100) {
     alert("WIN");
-    currentRoll.rolls = [];
-    $("#total").text("0");
+    $("#player2-board").hide();
+    $(".winner").show();
   }
   });
 
